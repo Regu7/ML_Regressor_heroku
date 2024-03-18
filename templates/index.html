@@ -2,24 +2,66 @@
 <html>
 <head>
     <title>Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        form {
+            margin: 50px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+        }
+        input {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <h2>Enter the features for prediction</h2>
     <form action="/predict" method="post">
-        <input type="text" name="Length1" placeholder="Length1" required="required">
-        <input type="text" name="Length2" placeholder="Length2" required="required">
-        <input type="text" name="Length3" placeholder="Length3" required="required">
-        <input type="text" name="Height" placeholder="Height" required="required">
-        <input type="text" name="Width" placeholder="Width" required="required">
-        <input type="text" name="Bream" placeholder="Bream" required="required">
-        <input type="text" name="Parkki" placeholder="Parkki" required="required">
-        <input type="text" name="Perch" placeholder="Perch" required="required">
-        <input type="text" name="Pike" placeholder="Pike" required="required">
-        <input type="text" name="Roach" placeholder="Roach" required="required">
-        <input type="text" name="Smelt" placeholder="Smelt" required="required">
-        <input type="text" name="Whitefish" placeholder="Whitefish" required="required">
-
-        <!-- Add more input fields for more features -->
+        <label for="Length1">Length1:</label>
+        <input type="text" id="Length1" name="Length1" placeholder="Length1" required="required">
+        <label for="Length2">Length2:</label>
+        <input type="text" id="Length2" name="Length2" placeholder="Length2" required="required">
+        <label for="Length3">Length3:</label>
+        <input type="text" id="Length3" name="Length3" placeholder="Length3" required="required">
+        <label for="Height">Height:</label>
+        <input type="text" id="Height" name="Height" placeholder="Height" required="required">
+        <label for="Width">Width:</label>
+        <input type="text" id="Width" name="Width" placeholder="Width" required="required">
+        <p>Provide the value 1 in respective fish species, fill zero for all other species:</p>
+        <label for="Bream">Bream:</label>
+        <input type="text" id="Bream" name="Bream" placeholder="Bream" required="required">
+        <label for="Parkki">Parkki:</label>
+        <input type="text" id="Parkki" name="Parkki" placeholder="Parkki" required="required">
+        <label for="Perch">Perch:</label>
+        <input type="text" id="Perch" name="Perch" placeholder="Perch" required="required">
+        <label for="Pike">Pike:</label>
+        <input type="text" id="Pike" name="Pike" placeholder="Pike" required="required">
+        <label for="Roach">Roach:</label>
+        <input type="text" id="Roach" name="Roach" placeholder="Roach" required="required">
+        <label for="Smelt">Smelt:</label>
+        <input type="text" id="Smelt" name="Smelt" placeholder="Smelt" required="required">
+        <label for="Whitefish">Whitefish:</label>
+        <input type="text" id="Whitefish" name="Whitefish" placeholder="Whitefish" required="required">
         <button type="submit">Predict</button>
     </form>
     {% if prediction_text %}
